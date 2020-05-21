@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="72px" viewBox="0 0 86 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Logo/Reducido</title>
+    <defs>
+        <linearGradient x1="85.6127829%" y1="24.7361551%" x2="5.01703961%" y2="71.671591%" id="linearGradient-1">
+            <stop stop-color="#F39000" offset="0%"></stop>
+            <stop stop-color="#DD6300" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logotipo" transform="translate(-247.000000, -626.000000)">
+            <g id="Logo/Reducido" transform="translate(247.000000, 626.000000)">
+                <g id="Group-Copy">
+                    <path d="M78.1777778,0 C82.4978718,9.45900184e-17 86,3.50212818 86,7.82222222 L86,50.0995655 C86,54.4196595 82.4978718,57.9217877 78.1777778,57.9217877 L63.704,57.921 L49.9012346,71.8659218 L49.901,57.921 L7.82222222,57.9217877 C3.50212818,57.9217877 4.08177261e-15,54.4196595 0,50.0995655 L0,7.82222222 C-1.41723735e-15,3.50212818 3.50212818,2.56994524e-15 7.82222222,0 L78.1777778,0 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+                    <ellipse id="Oval" fill="#0C0C0C" cx="43.1769547" cy="28.603352" rx="16.2798354" ry="16.4469274"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

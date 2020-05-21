@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8449297E-FCC8-4E0F-9E4D-19AC38E59B46"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            uuid = "39F59160-163B-4CF0-B25E-5AEE7BD83FE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "2F5F434D-E172-428F-B923-B1ED1530AD76"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BFD94DB-0989-40FC-8C34-AB7AB53A62D4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4547A7F0-4BCA-4DCB-A46B-36FD6E6C4B6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FAD30ED-7C29-4EA5-A945-199B36ADDB23"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84BBAAAB-44DE-41BE-894A-9C2D5D07A46A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10467F37-AC57-4BDD-A4FF-E80EB9172D92"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65914C62-D770-4F37-8385-49DAC6E4FC6B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "866AE2D1-A30E-486C-9194-F3D72C4ADA4F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "866AE2D1-A30E-486C-9194-F3D72C4ADA4F - 84bdf89eff9a2b14"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Discourse_SoniaSieiro.NewTopicViewController.submit(Any) -&gt; ()"
+                  moduleName = "Discourse_SoniaSieiro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/soniasieiro/Desktop/08.programacion/00_Mobile/03_Concurrencia_Red_iOs/Discourse_SoniaSieiro/Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "3095">
+               </Location>
+               <Location
+                  uuid = "866AE2D1-A30E-486C-9194-F3D72C4ADA4F - 2f804bc8464d54fa"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Discourse_SoniaSieiro.NewTopicViewController.submit(Any) -&gt; ()"
+                  moduleName = "Discourse_SoniaSieiro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/soniasieiro/Desktop/08.programacion/00_Mobile/03_Concurrencia_Red_iOs/Discourse_SoniaSieiro/Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "412A0C77-D48B-4FF9-884E-9938E779ACE8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFB3228A-6680-4C17-909A-89FB4C8E0C66"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "submit(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BFB3228A-6680-4C17-909A-89FB4C8E0C66 - 2f804bc8464d54fa"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Discourse_SoniaSieiro.NewTopicViewController.submit(Any) -&gt; ()"
+                  moduleName = "Discourse_SoniaSieiro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/soniasieiro/Desktop/08.programacion/00_Mobile/03_Concurrencia_Red_iOs/Discourse_SoniaSieiro/Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "824">
+               </Location>
+               <Location
+                  uuid = "BFB3228A-6680-4C17-909A-89FB4C8E0C66 - c1aa2142ad48a841"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Discourse_SoniaSieiro.NewTopicViewController.submit(Any) -&gt; ()"
+                  moduleName = "Discourse_SoniaSieiro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/soniasieiro/Desktop/08.programacion/00_Mobile/03_Concurrencia_Red_iOs/Discourse_SoniaSieiro/Discourse_SoniaSieiro/Topics/newTopic/NewTopicViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
