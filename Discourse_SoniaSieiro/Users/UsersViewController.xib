@@ -9,7 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UsersViewController" customModule="Discourse_SoniaSieiro" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="kbr-SD-kzy" id="ou0-tn-tTL"/>
+                <outlet property="collectionView" destination="ZZ1-Vh-C9Q" id="D2p-cx-hYT"/>
+                <outlet property="titleLabel" destination="35Q-pj-BkM" id="fpo-2E-O9R"/>
                 <outlet property="view" destination="iN0-l3-epB" id="01g-l5-Hat"/>
             </connections>
         </placeholder>
@@ -18,17 +19,35 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kbr-SD-kzy">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ1-Vh-C9Q">
+                    <rect key="frame" x="0.0" y="111" width="414" height="785"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hIs-AB-fhP">
+                        <size key="itemSize" width="94" height="124"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-pj-BkM">
+                    <rect key="frame" x="16" y="62" width="382" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="Jj1-Lw-hvB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="kbr-SD-kzy" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="5MO-pr-iWZ"/>
-                <constraint firstItem="kbr-SD-kzy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JXq-x2-oYT"/>
-                <constraint firstItem="kbr-SD-kzy" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="PFI-Ca-Gpl"/>
-                <constraint firstItem="kbr-SD-kzy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lxA-gg-sQf"/>
+                <constraint firstItem="ZZ1-Vh-C9Q" firstAttribute="top" secondItem="35Q-pj-BkM" secondAttribute="bottom" constant="8" id="610-Ds-HSn"/>
+                <constraint firstAttribute="bottom" secondItem="ZZ1-Vh-C9Q" secondAttribute="bottom" id="FIM-9E-7kE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="35Q-pj-BkM" secondAttribute="trailing" constant="16" id="Ivm-aC-dHk"/>
+                <constraint firstItem="ZZ1-Vh-C9Q" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="OSl-MU-rem"/>
+                <constraint firstItem="35Q-pj-BkM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="Ug2-dC-fID"/>
+                <constraint firstItem="35Q-pj-BkM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="n5N-e2-Zbt"/>
+                <constraint firstItem="ZZ1-Vh-C9Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="oR5-P3-ZaM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="134.78260869565219" y="141.96428571428569"/>

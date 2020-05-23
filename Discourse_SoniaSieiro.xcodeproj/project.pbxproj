@@ -23,6 +23,8 @@
 		F769D89D2428DC76001FCACF /* SingleTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D89C2428DC76001FCACF /* SingleTopic.swift */; };
 		F7752D252476E44100C69F6B /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7752D242476E44100C69F6B /* UIColor+Additions.swift */; };
 		F7752D272476E49000C69F6B /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7752D262476E49000C69F6B /* UIFont+Additions.swift */; };
+		F7752D2B2476E70B00C69F6B /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7752D2A2476E70B00C69F6B /* UsersCollectionViewCell.swift */; };
+		F7752D2D2476E71300C69F6B /* UsersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7752D2C2476E71300C69F6B /* UsersCollectionViewCell.xib */; };
 		F77B90AE242E269000B6B671 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77B90AD242E269000B6B671 /* NewTopicViewController.swift */; };
 		F77B90B0242E26A100B6B671 /* NewTopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77B90AF242E26A100B6B671 /* NewTopicViewController.xib */; };
 		F77FD172243A301700B33A3D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77FD171243A301700B33A3D /* Users.swift */; };
@@ -51,6 +53,8 @@
 		F769D89C2428DC76001FCACF /* SingleTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTopic.swift; sourceTree = "<group>"; };
 		F7752D242476E44100C69F6B /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		F7752D262476E49000C69F6B /* UIFont+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
+		F7752D2A2476E70B00C69F6B /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7752D2C2476E71300C69F6B /* UsersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCollectionViewCell.xib; sourceTree = "<group>"; };
 		F77B90AD242E269000B6B671 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		F77B90AF242E26A100B6B671 /* NewTopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTopicViewController.xib; sourceTree = "<group>"; };
 		F77FD171243A301700B33A3D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			children = (
 				F710B7872420EC36009C7548 /* UsersViewController.swift */,
 				F7FBFD4124210CD7007B8E4F /* UsersViewController.xib */,
+				F7752D282476E6C900C69F6B /* CollectionView */,
 				F74EA57C243C9DF90006DB30 /* Detail */,
 			);
 			path = Users;
@@ -171,6 +176,15 @@
 				F7752D242476E44100C69F6B /* UIColor+Additions.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		F7752D282476E6C900C69F6B /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F7752D2A2476E70B00C69F6B /* UsersCollectionViewCell.swift */,
+				F7752D2C2476E71300C69F6B /* UsersCollectionViewCell.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		F791D9CD242E2228006ADD95 /* newTopic */ = {
@@ -241,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F710B7902420EC37009C7548 /* LaunchScreen.storyboard in Resources */,
+				F7752D2D2476E71300C69F6B /* UsersCollectionViewCell.xib in Resources */,
 				F7FBFD4224210CD7007B8E4F /* UsersViewController.xib in Resources */,
 				F7FBFD4424210D24007B8E4F /* CategoriesViewController.xib in Resources */,
 				F769D89B2428CAC3001FCACF /* TopicsDetailViewController.xib in Resources */,
@@ -259,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7CEBF0324238FBB00377826 /* Topics.swift in Sources */,
+				F7752D2B2476E70B00C69F6B /* UsersCollectionViewCell.swift in Sources */,
 				F7752D272476E49000C69F6B /* UIFont+Additions.swift in Sources */,
 				F77B90AE242E269000B6B671 /* NewTopicViewController.swift in Sources */,
 				F74EA57E243C9E120006DB30 /* UserDetailViewController.swift in Sources */,

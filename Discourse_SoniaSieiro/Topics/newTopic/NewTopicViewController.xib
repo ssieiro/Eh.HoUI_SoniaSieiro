@@ -49,7 +49,6 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
                 <constraint firstItem="uDQ-t9-3CI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="40K-Bv-Axw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="swn-uQ-3Gb" secondAttribute="trailing" constant="135" id="5ab-Hp-vHg"/>

@@ -26,10 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navCategoriesVC = UINavigationController.init(rootViewController: categoriesVC)
         let navUsersVC = UINavigationController.init(rootViewController: usersVC)
         
-
-//        UINavigationBar.appearance().overrideUserInterfaceStyle = .light
-//        UINavigationBar.appearance().tintColor = UIColor.init(red: 235/255.0, green: 172/255.0, blue: 38/255.0, alpha: 1.0)
-        
         
         topicsVC.tabBarItem  = UITabBarItem.init(title: "Topics", image: UIImage.init(named: "inicio"), tag: 0)
         categoriesVC.tabBarItem   = UITabBarItem.init(title: "Categories", image: UIImage.init(systemName: "tag.fill"), tag: 1)
@@ -43,8 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.tabBar.barStyle  = .default
         tabBarController.tabBar.isTranslucent  = true
         tabBarController.tabBar.tintColor = UIColor.pumpkin
- 
-        UINavigationBar.appearance().overrideUserInterfaceStyle = .dark
+
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

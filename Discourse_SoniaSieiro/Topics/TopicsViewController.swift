@@ -136,8 +136,7 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = latestTopics[indexPath.row].title
-        cell.textLabel?.textColor = UIColor.white
-        cell.contentView.backgroundColor = UIColor.darkGray
+        cell.textLabel?.textColor = UIColor.black
         return cell
     }
     

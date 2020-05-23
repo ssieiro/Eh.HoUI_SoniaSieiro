@@ -86,7 +86,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0p0-ES-VQh" secondAttribute="trailing" constant="20" id="29Y-fz-Scv"/>
                 <constraint firstItem="gzw-aD-eqe" firstAttribute="top" secondItem="0p0-ES-VQh" secondAttribute="bottom" constant="8" id="4ct-mg-Ihg"/>

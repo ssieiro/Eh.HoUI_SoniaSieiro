@@ -17,21 +17,31 @@ class UsersViewController: UIViewController  {
 
     
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var users: [Users] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
 
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    func setupUI() {
+        titleLabel.font = .largeTitle2Bold1Light1LabelColor1LeftAligned
+        titleLabel.text = "Usuarios"
+
+        let nib = UINib.init(nibName: "UsersCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "UsersCollectionViewCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
 
         fetch { [weak self] result in
             switch result {
             case .success(let users):
                 self?.users = users
-                self?.tableView.reloadData()
+                self?.collectionView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -65,52 +75,42 @@ class UsersViewController: UIViewController  {
     
 }
 
-extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
-
-    // MARK: - UITableViewDatasource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension UsersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 94, height: 124)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 24, left: 26, bottom: 0, right: 26);
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 19
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20.5
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.textColor = UIColor.white
-        cell.contentView.backgroundColor = UIColor.darkGray
-        cell.textLabel?.text = users[indexPath.row].user.username
-        
-        DispatchQueue.global(qos:.userInitiated).async { [weak self] in
-            if let avatarTemplate = self?.users[indexPath.row].user.avatarTemplate {
-                let sized = avatarTemplate.replacingOccurrences(of: "{size}", with: "150")
-                let usersURL = "https://mdiscourse.keepcoding.io\(sized)"
-                guard let url = URL(string: usersURL),
-                let data = try? Data(contentsOf: url) else {return}
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    cell.imageView?.image = image
-                    cell.setNeedsLayout()
-                }
-            }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UsersCollectionViewCell", for: indexPath) as? UsersCollectionViewCell {
+            
+            let user = users[indexPath.row].user
+            cell.setUser(user: user)
+            return cell
         }
-        
-        return cell
+        fatalError("Could not create the User cell")
     }
     
-    // MARK: UITableViewDelegate
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let singleUser = users[indexPath.row]
         let userDetailVC = UserDetailViewController.init(withUsername: singleUser.user.username)
         let navigationController = UINavigationController(rootViewController: userDetailVC)
         navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
+
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
+    
+
