@@ -19,6 +19,7 @@ enum LatestTopicsError: Error {
 
 class TopicsViewController: UIViewController, TopicViewControllerDelegate {
     
+    private let apiProvider = ApiProvider()
     var latestTopics: [Topic] = []
 
     @IBOutlet weak var tableView: UITableView!
@@ -32,7 +33,7 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
-        fetchLatestTopics { [weak self] (result) in
+        apiProvider.getLatestTopics { [weak self] (result) in
             switch result {
             case .success(let latestTopics):
                 self?.latestTopics = latestTopics
@@ -53,53 +54,53 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         present(alertController, animated: true, completion: nil)
     }
 
-    func fetchLatestTopics(completion: @escaping (Result<[Topic], Error>) -> Void) {
-        guard let latestTopicsURL = URL(string: "https://mdiscourse.keepcoding.io/latest.json") else {
-            completion(.failure(LatestTopicsError.malformedURL))
-            return
-        }
-
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration)
-
-        var request = URLRequest(url: latestTopicsURL)
-        request.httpMethod = "GET"
-        request.addValue("699667f923e65fac39b632b0d9b2db0d9ee40f9da15480ad5a4bcb3c1b095b7a", forHTTPHeaderField: "Api-Key")
-        request.addValue("ssieiro2", forHTTPHeaderField: "Api-Username")
-
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
-                return
-            }
-
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    completion(.failure(LatestTopicsError.emptyData))
-                }
-                return
-            }
-
-            do {
-                let response = try JSONDecoder().decode(LatestTopicsResponse.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(response.topicList.topics))
-                }
-            } catch(let error) {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
-            }
-        }
-
-        dataTask.resume()
-    }
+//    func fetchLatestTopics(completion: @escaping (Result<[Topic], Error>) -> Void) {
+//        guard let latestTopicsURL = URL(string: "https://mdiscourse.keepcoding.io/latest.json") else {
+//            completion(.failure(LatestTopicsError.malformedURL))
+//            return
+//        }
+//
+//        let configuration = URLSessionConfiguration.default
+//        let session = URLSession(configuration: configuration)
+//
+//        var request = URLRequest(url: latestTopicsURL)
+//        request.httpMethod = "GET"
+//        request.addValue("699667f923e65fac39b632b0d9b2db0d9ee40f9da15480ad5a4bcb3c1b095b7a", forHTTPHeaderField: "Api-Key")
+//        request.addValue("ssieiro2", forHTTPHeaderField: "Api-Username")
+//
+//        let dataTask = session.dataTask(with: request) { (data, response, error) in
+//            if let error = error {
+//                DispatchQueue.main.async {
+//                    completion(.failure(error))
+//                }
+//                return
+//            }
+//
+//            guard let data = data else {
+//                DispatchQueue.main.async {
+//                    completion(.failure(LatestTopicsError.emptyData))
+//                }
+//                return
+//            }
+//
+//            do {
+//                let response = try JSONDecoder().decode(LatestTopicsResponse.self, from: data)
+//                DispatchQueue.main.async {
+//                    completion(.success(response.topicList.topics))
+//                }
+//            } catch(let error) {
+//                DispatchQueue.main.async {
+//                    completion(.failure(error))
+//                }
+//            }
+//        }
+//
+//        dataTask.resume()
+//    }
 
     func reloadTable() {
         print("recargado")
-        fetchLatestTopics { [weak self] (result) in
+        apiProvider.getLatestTopics { [weak self] (result) in
             switch result {
             case .success(let latestTopics):
                 self?.latestTopics = latestTopics

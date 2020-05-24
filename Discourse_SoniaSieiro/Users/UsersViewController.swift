@@ -16,10 +16,11 @@ enum UsersError: Error {
 class UsersViewController: UIViewController  {
 
     
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    private let apiProvider = ApiProvider()
     var users: [Users] = []
     
     override func viewDidLoad() {
@@ -37,7 +38,7 @@ class UsersViewController: UIViewController  {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        fetch { [weak self] result in
+        apiProvider.getUsers { [weak self] result in
             switch result {
             case .success(let users):
                 self?.users = users
@@ -46,33 +47,7 @@ class UsersViewController: UIViewController  {
                 print(error)
             }
         }
-    }
-
-    func fetch(completion: @escaping (Result<[Users], Error>) -> Void){
-        
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration)
-        guard let url = URL(string:"https://mdiscourse.keepcoding.io/directory_items.json?period=all") else { fatalError() }
-
-        let task = session.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    completion(.failure(error))
-                    return
-                }
-                if let data = data {
-                    guard let UsersListResponse = try? JSONDecoder().decode(UsersListResponse.self, from: data) else {
-                        completion(.failure(UsersError.empty))
-                        return
-                    }
-                    completion(.success(UsersListResponse.directoryItems))
-                }
-            }
-        }
-        
-        task.resume()
-    }
-    
+    }    
 }
 
 extension UsersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

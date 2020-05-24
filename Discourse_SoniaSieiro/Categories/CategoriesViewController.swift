@@ -16,6 +16,8 @@ enum CategoriesError: Error {
 class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    private let apiProvider = ApiProvider()
     var categories: [Category] = []
 
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class CategoriesViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
-        fetchCategories { [weak self] (result) in
+        apiProvider.getCategories { [weak self] (result) in
             switch result {
             case .success(let categories):
                 self?.categories = categories
@@ -41,51 +43,6 @@ class CategoriesViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
-
-    func fetchCategories(completion: @escaping (Result<[Category], Error>) -> Void) {
-        guard let categoriesURL = URL(string: "https://mdiscourse.keepcoding.io/categories.json") else {
-            completion(.failure(CategoriesError.malformedURL))
-            return
-        }
-
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration)
-
-        var request = URLRequest(url: categoriesURL)
-        request.httpMethod = "GET"
-        request.addValue("699667f923e65fac39b632b0d9b2db0d9ee40f9da15480ad5a4bcb3c1b095b7a", forHTTPHeaderField: "Api-Key")
-        request.addValue("soniasieiro", forHTTPHeaderField: "Api-Username")
-
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
-                return
-            }
-
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    completion(.failure(CategoriesError.emptyData))
-                }
-                return
-            }
-
-            do {
-                let response = try JSONDecoder().decode(CategoriesResponse.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(response.categoryList.categories))
-                }
-            } catch(let error) {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
-            }
-        }
-
-        dataTask.resume()
-    }
-
 }
 
 extension CategoriesViewController: UITableViewDataSource {
