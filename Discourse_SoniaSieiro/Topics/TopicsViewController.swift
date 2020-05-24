@@ -20,19 +20,29 @@ enum LatestTopicsError: Error {
 class TopicsViewController: UIViewController, TopicViewControllerDelegate {
     
     private let apiProvider = ApiProvider()
-    var latestTopics: [Topic] = []
+    private var latestTopics: [Topic] = []
+    private var users: [Users] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTopicButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+
+    }
+    
+    func setupUI() {
         self.navigationController?.isNavigationBarHidden = true
         newTopicButton.layer.cornerRadius = 4
+        
+        let nib = UINib.init(nibName: "TopicsTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "TopicsTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-
+        
         apiProvider.getLatestTopics { [weak self] (result) in
             switch result {
             case .success(let latestTopics):
@@ -44,6 +54,15 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
                 self?.showErrorAlert(message: error.localizedDescription)
             }
         }
+        
+        apiProvider.getUsers { [weak self] result in
+            switch result {
+            case .success(let users):
+                self?.users = users
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     
@@ -53,50 +72,6 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
-
-//    func fetchLatestTopics(completion: @escaping (Result<[Topic], Error>) -> Void) {
-//        guard let latestTopicsURL = URL(string: "https://mdiscourse.keepcoding.io/latest.json") else {
-//            completion(.failure(LatestTopicsError.malformedURL))
-//            return
-//        }
-//
-//        let configuration = URLSessionConfiguration.default
-//        let session = URLSession(configuration: configuration)
-//
-//        var request = URLRequest(url: latestTopicsURL)
-//        request.httpMethod = "GET"
-//        request.addValue("699667f923e65fac39b632b0d9b2db0d9ee40f9da15480ad5a4bcb3c1b095b7a", forHTTPHeaderField: "Api-Key")
-//        request.addValue("ssieiro2", forHTTPHeaderField: "Api-Username")
-//
-//        let dataTask = session.dataTask(with: request) { (data, response, error) in
-//            if let error = error {
-//                DispatchQueue.main.async {
-//                    completion(.failure(error))
-//                }
-//                return
-//            }
-//
-//            guard let data = data else {
-//                DispatchQueue.main.async {
-//                    completion(.failure(LatestTopicsError.emptyData))
-//                }
-//                return
-//            }
-//
-//            do {
-//                let response = try JSONDecoder().decode(LatestTopicsResponse.self, from: data)
-//                DispatchQueue.main.async {
-//                    completion(.success(response.topicList.topics))
-//                }
-//            } catch(let error) {
-//                DispatchQueue.main.async {
-//                    completion(.failure(error))
-//                }
-//            }
-//        }
-//
-//        dataTask.resume()
-//    }
 
     func reloadTable() {
         print("recargado")
@@ -135,10 +110,12 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = latestTopics[indexPath.row].title
-        cell.textLabel?.textColor = UIColor.black
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "TopicsTableViewCell", for: indexPath) as? TopicsTableViewCell {
+            let topic = latestTopics[indexPath.row]
+            cell.setTopic(topic: topic, users: users)
+            return cell
+        }
+        fatalError("Could not create the Topic Cell")
     }
     
     
@@ -146,6 +123,10 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 96
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

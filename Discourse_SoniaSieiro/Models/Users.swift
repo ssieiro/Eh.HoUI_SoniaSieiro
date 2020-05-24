@@ -23,11 +23,13 @@ struct Users: Codable {
 
 struct User: Codable {
     let username: String
+    let id: Int
     let name: String?
     let avatarTemplate: String
     
     enum CodingKeys: String, CodingKey {
         case avatarTemplate = "avatar_template"
+        case id
         case username
         case name
     }
