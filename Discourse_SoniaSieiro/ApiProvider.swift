@@ -274,6 +274,25 @@ class ApiProvider {
 
             dataTask.resume()
         }
+    
+//    Date Formatter
+    
+    func dateFormater (_ inputStringDate: String) -> String {
+        let inputFormat = "YYYY-MM-DD'T'HH:mm:ss.SSSZ"
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "es_ES")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.dateFormat = inputFormat
+        // Generar la fecha a partir del string y el formato de entrada
+        guard let date = dateFormatter.date(from: inputStringDate) else { fatalError() }
+
+        // Generar el string en el format de fecha requerido
+        // Friday 17, January
+        let outputFormat = "MMM d"
+        dateFormatter.dateFormat = outputFormat
+        let outputStringDate = dateFormatter.string(from: date)
+        return outputStringDate
+    }
 
 }
 

@@ -44,7 +44,8 @@ class TopicsTableViewCell: UITableViewCell {
         topicTitle.font = .style27
         topicTitle.text = topic.title
         postCountLabel.text = String(topic.postsCount)
-        dateLabel.text = topic.lastPostedAt
+        let date = apiProvider.dateFormater(topic.lastPostedAt)
+        dateLabel.text = date.capitalized
         
     }
     

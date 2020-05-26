@@ -25,6 +25,7 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTopicButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,8 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
     func setupUI() {
         self.navigationController?.isNavigationBarHidden = true
         newTopicButton.layer.cornerRadius = 4
+        titleLabel.font = .largeTitle2Bold1Light1LabelColor1LeftAligned
+        titleLabel.text = "Temas"
         
         let nib = UINib.init(nibName: "TopicsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TopicsTableViewCell")

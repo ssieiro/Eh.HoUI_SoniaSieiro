@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="newTopicButton" destination="nKB-sH-6gP" id="byW-FN-Cjl"/>
                 <outlet property="tableView" destination="icv-Lj-1Ub" id="Wpf-g6-OwC"/>
+                <outlet property="titleLabel" destination="SNf-5c-tq3" id="c6b-V4-eKl"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bZy-Qv-Ug8"/>
             </connections>
         </placeholder>
@@ -20,36 +21,50 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="icv-Lj-1Ub">
-                    <rect key="frame" x="0.0" y="125" width="414" height="771"/>
+                    <rect key="frame" x="0.0" y="111" width="414" height="785"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKB-sH-6gP">
-                    <rect key="frame" x="339" y="57" width="59" height="54"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKB-sH-6gP">
+                    <rect key="frame" x="336" y="726" width="64" height="64"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="54" id="ab1-cb-8Pu"/>
-                        <constraint firstAttribute="width" constant="59" id="heY-Mo-gsP"/>
+                        <constraint firstAttribute="height" constant="64" id="IzD-Qw-rs5"/>
+                        <constraint firstAttribute="width" constant="64" id="RGW-0t-2cn"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                    <state key="normal" title="+">
+                    <state key="normal" image="icoNew">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="createNewTopic:" destination="-1" eventType="touchUpInside" id="cbz-Kv-Csx"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNf-5c-tq3">
+                    <rect key="frame" x="16" y="62" width="382" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="8ec-qu-dc0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="nKB-sH-6gP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="13" id="Cjo-QF-V9J"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nKB-sH-6gP" secondAttribute="trailing" constant="16" id="KX6-mf-U9f"/>
+                <constraint firstAttribute="bottom" secondItem="nKB-sH-6gP" secondAttribute="bottom" constant="106" id="48W-AR-MsI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SNf-5c-tq3" secondAttribute="trailing" constant="16" id="5ms-Wb-60k"/>
+                <constraint firstAttribute="trailing" secondItem="nKB-sH-6gP" secondAttribute="trailing" constant="14" id="Mua-4Q-59d"/>
                 <constraint firstItem="icv-Lj-1Ub" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Vk9-C4-l9F"/>
                 <constraint firstItem="icv-Lj-1Ub" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Wld-OO-Hdi"/>
+                <constraint firstItem="SNf-5c-tq3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="cX4-yX-yxV"/>
+                <constraint firstItem="SNf-5c-tq3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="eyK-Vf-erq"/>
                 <constraint firstAttribute="bottom" secondItem="icv-Lj-1Ub" secondAttribute="bottom" id="m4j-bb-wxb"/>
-                <constraint firstItem="icv-Lj-1Ub" firstAttribute="top" secondItem="nKB-sH-6gP" secondAttribute="bottom" constant="14" id="nOb-1e-3Oz"/>
+                <constraint firstItem="icv-Lj-1Ub" firstAttribute="top" secondItem="SNf-5c-tq3" secondAttribute="bottom" constant="8" id="nqe-1I-YCD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="136.80000000000001" y="141.87192118226602"/>
         </view>
     </objects>
+    <resources>
+        <image name="icoNew" width="64" height="64"/>
+    </resources>
 </document>
