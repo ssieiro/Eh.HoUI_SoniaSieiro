@@ -29,7 +29,7 @@
                         <constraint firstAttribute="height" constant="95" id="YJT-Kj-ekS"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzw-aD-eqe">
@@ -38,7 +38,7 @@
                         <constraint firstAttribute="height" constant="95" id="MV8-Zs-2Db"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqy-JA-KL5">
@@ -47,7 +47,7 @@
                         <constraint firstAttribute="height" constant="95" id="7cw-rn-dmC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8r-2t-yL5">
@@ -57,8 +57,10 @@
                         <constraint firstAttribute="width" constant="50" id="oQr-Nd-fBH"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="xmark.circle" catalog="system"/>
+                    <color key="tintColor" red="0.86666666670000003" green="0.38823529410000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="xmark.circle" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                    </state>
                     <connections>
                         <action selector="close:" destination="-1" eventType="touchUpInside" id="MND-Ec-e2m"/>
                     </connections>
@@ -73,11 +75,12 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAZ-NU-USv">
                     <rect key="frame" x="131" y="746" width="153" height="50"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.38823529410000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="153" id="0kh-vS-1vh"/>
                         <constraint firstAttribute="height" constant="50" id="r0v-LF-qg0"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <state key="normal" title="Update name">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>

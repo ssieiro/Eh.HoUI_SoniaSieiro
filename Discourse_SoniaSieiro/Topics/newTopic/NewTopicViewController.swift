@@ -16,12 +16,14 @@ class NewTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Create"
+        self.title = "Create new topic"
+        submitButton.layer.cornerRadius = 10
         topicTitle.placeholder = "Introduzca título del topic"
     }
  
 
     @IBOutlet weak var topicTitle: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
     
     

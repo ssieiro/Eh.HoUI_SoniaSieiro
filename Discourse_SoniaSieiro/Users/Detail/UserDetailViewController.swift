@@ -38,6 +38,7 @@ class UserDetailViewController: UIViewController {
     }
     
     func setupUI() {
+        updateButton.layer.cornerRadius = 10
         if let singleUser = singleUser {
             userId.text = "Id: \(singleUser.user.id)"
             usernameLabel.text = singleUser.user.username

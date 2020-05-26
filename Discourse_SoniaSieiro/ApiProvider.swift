@@ -76,7 +76,7 @@ class ApiProvider {
     
 //    Fetch Methods
     
-    func getLatestTopics(completion: @escaping (Result<[Topic], Error>) -> Void) {
+    func getLatestTopics(completion: @escaping (Result<LatestTopicsResponse, Error>) -> Void) {
         guard let latestTopicsURL = URL(string: "\(url)/latest.json") else {
             completion(.failure(LatestTopicsError.malformedURL))
             return
@@ -108,7 +108,7 @@ class ApiProvider {
             do {
                 let response = try JSONDecoder().decode(LatestTopicsResponse.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(response.topicList.topics))
+                    completion(.success(response))
                 }
             } catch(let error) {
                 DispatchQueue.main.async {

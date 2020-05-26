@@ -30,8 +30,9 @@ class UsersViewController: UIViewController  {
     }
     
     func setupUI() {
+        self.navigationController?.isNavigationBarHidden = true
         titleLabel.font = .largeTitle2Bold1Light1LabelColor1LeftAligned
-        titleLabel.text = "Usuarios"
+        titleLabel.text = "Users"
 
         let nib = UINib.init(nibName: "UsersCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "UsersCollectionViewCell")

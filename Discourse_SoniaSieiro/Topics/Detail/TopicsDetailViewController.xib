@@ -21,13 +21,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk4-s2-z8r">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk4-s2-z8r">
                     <rect key="frame" x="20" y="148" width="374" height="95"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="95" id="fMP-rd-Lcr"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqT-bG-SOd">
@@ -36,7 +36,7 @@
                         <constraint firstAttribute="height" constant="95" id="Gtb-1a-2j4"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-fQ-cB3">
@@ -45,18 +45,19 @@
                         <constraint firstAttribute="height" constant="95" id="YVI-5u-Jko"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5z-na-X8Y">
                     <rect key="frame" x="131" y="767" width="153" height="50"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.38823529410000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="153" id="6Fo-Rw-Hpx"/>
                         <constraint firstAttribute="height" constant="50" id="o02-iB-UO8"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <state key="normal" title="Delete topic">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     </state>
                     <connections>
                         <action selector="deleteTopic:" destination="-1" eventType="touchUpInside" id="f6g-VQ-toO"/>
@@ -69,13 +70,16 @@
                         <constraint firstAttribute="height" constant="55" id="rdM-el-7e2"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="xmark.circle" catalog="system"/>
+                    <color key="tintColor" red="0.86666666670000003" green="0.38823529410000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="xmark.circle" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                    </state>
                     <connections>
                         <action selector="closeTopic:" destination="-1" eventType="touchUpInside" id="11s-ff-c8a"/>
                     </connections>
                 </button>
             </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qrP-fQ-cB3" secondAttribute="trailing" constant="20" id="3Ni-Op-WDg"/>
                 <constraint firstItem="qrP-fQ-cB3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="6gb-hl-5vK"/>

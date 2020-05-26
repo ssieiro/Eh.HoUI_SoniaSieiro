@@ -43,6 +43,7 @@ class TopicsDetailViewController: UIViewController {
         topicTitle.text = singleTopic?.title
         topicId.text = "Id: \(singleTopic?.id ?? 0)"
         postNumber.text = "Número de posts: \(singleTopic?.postsCount ?? 0)"
+        deleteButton.layer.cornerRadius = 10
         if singleTopic?.details.canDelete == true {
             self.deleteButton.isHidden = false
         }

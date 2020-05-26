@@ -20,8 +20,9 @@ enum LatestTopicsError: Error {
 class TopicsViewController: UIViewController, TopicViewControllerDelegate {
     
     private let apiProvider = ApiProvider()
-    private var latestTopics: [Topic] = []
-    private var users: [Users] = []
+    private var latestTopicsResponse: LatestTopicsResponse?
+    private var latestTopics : [Topic] = []
+    private var users: [User] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTopicButton: UIButton!
@@ -39,7 +40,7 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         self.navigationController?.isNavigationBarHidden = true
         newTopicButton.layer.cornerRadius = 4
         titleLabel.font = .largeTitle2Bold1Light1LabelColor1LeftAligned
-        titleLabel.text = "Temas"
+        titleLabel.text = "Topics"
         
         let nib = UINib.init(nibName: "TopicsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TopicsTableViewCell")
@@ -48,8 +49,10 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         
         apiProvider.getLatestTopics { [weak self] (result) in
             switch result {
-            case .success(let latestTopics):
-                self?.latestTopics = latestTopics
+            case .success(let latestTopicsResponse):
+                self?.latestTopicsResponse = latestTopicsResponse
+                self?.latestTopics = latestTopicsResponse.topicList.topics
+                self?.users = latestTopicsResponse.users
                 self?.tableView.reloadData()
                 
             case .failure(let error):
@@ -57,15 +60,7 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
                 self?.showErrorAlert(message: error.localizedDescription)
             }
         }
-        
-        apiProvider.getUsers { [weak self] result in
-            switch result {
-            case .success(let users):
-                self?.users = users
-            case .failure(let error):
-                print(error)
-            }
-        }
+        tableView.reloadData()
     }
 
     
@@ -80,8 +75,9 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         print("recargado")
         apiProvider.getLatestTopics { [weak self] (result) in
             switch result {
-            case .success(let latestTopics):
-                self?.latestTopics = latestTopics
+            case .success(let latestTopicsResponse):
+                self?.latestTopicsResponse = latestTopicsResponse
+                self?.users = latestTopicsResponse.users
                 self?.tableView.reloadData()
                 print("reload data")
             case .failure(let error):
@@ -89,6 +85,7 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
                 self?.showErrorAlert(message: error.localizedDescription)
             }
         }
+
     }
     
     

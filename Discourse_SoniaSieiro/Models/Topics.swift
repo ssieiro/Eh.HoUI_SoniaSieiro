@@ -10,8 +10,10 @@ import Foundation
 
 struct LatestTopicsResponse: Codable {
     let topicList: TopicList
+    let users: [User]
     enum CodingKeys: String, CodingKey {
         case topicList = "topic_list"
+        case users
     }
 }
 
@@ -25,6 +27,7 @@ struct Topic: Codable {
     let title: String
     let postsCount: Int
     let lastPostedAt: String
+    let lastPosterUsername: String
     let posters: [Poster]
     enum CodingKeys: String, CodingKey {
         case id
@@ -32,6 +35,7 @@ struct Topic: Codable {
         case postsCount = "posts_count"
         case lastPostedAt = "last_posted_at"
         case posters
+        case lastPosterUsername = "last_poster_username"
     }
 }
 

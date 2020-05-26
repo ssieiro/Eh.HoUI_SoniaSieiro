@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTopicViewController" customModule="Discourse_SoniaSieiro" customModuleProvider="target">
             <connections>
+                <outlet property="submitButton" destination="swn-uQ-3Gb" id="a2c-LQ-RyL"/>
                 <outlet property="topicTitle" destination="uDQ-t9-3CI" id="9NW-Ls-lKX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="9OE-Xn-gGd"/>
             </connections>
@@ -21,20 +22,23 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhF-Pb-MdP">
                     <rect key="frame" x="30" y="119" width="41" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="xmark.circle" catalog="system"/>
+                    <color key="tintColor" red="0.86666666670000003" green="0.38823529410000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="xmark.circle" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large"/>
+                    </state>
                     <connections>
                         <action selector="closeNewTopic:" destination="-1" eventType="touchUpInside" id="RZT-nz-RoT"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swn-uQ-3Gb">
                     <rect key="frame" x="141" y="721" width="138" height="60"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.38823529410000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="vvQ-Wg-YRz"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <state key="normal" title="Submit">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.88" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     </state>
                     <connections>
                         <action selector="submit:" destination="-1" eventType="touchUpInside" id="KSr-1N-eOu"/>
@@ -49,6 +53,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="uDQ-t9-3CI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="40K-Bv-Axw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="swn-uQ-3Gb" secondAttribute="trailing" constant="135" id="5ab-Hp-vHg"/>
