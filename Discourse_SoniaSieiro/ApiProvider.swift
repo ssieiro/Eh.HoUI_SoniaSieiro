@@ -278,7 +278,7 @@ class ApiProvider {
 //    Date Formatter
     
     func dateFormater (_ inputStringDate: String) -> String {
-        let inputFormat = "YYYY-MM-DD'T'HH:mm:ss.SSSZ"
+        let inputFormat = "YYYY-MM-dd'T'HH:mm:ss.SSSZ"
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "es_ES")
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)

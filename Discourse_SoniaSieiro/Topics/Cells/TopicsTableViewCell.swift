@@ -35,7 +35,7 @@ class TopicsTableViewCell: UITableViewCell {
         DispatchQueue.global(qos:.userInitiated).async { [weak self] in
                 let avatarTemplate = user.avatarTemplate
                 let sized = avatarTemplate.replacingOccurrences(of: "{size}", with: "80")
-            let usersURL = "https://mdiscourse.keepcoding.io\(sized)"
+                let usersURL = "https://mdiscourse.keepcoding.io\(sized)"
                 guard let url = URL(string: usersURL),
                 let data = try? Data(contentsOf: url) else {return}
                 let image = UIImage(data: data)
