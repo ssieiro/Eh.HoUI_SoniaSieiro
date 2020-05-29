@@ -18,6 +18,8 @@ class UsersCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         user = nil
+        userImage.image = nil
+        
        }
     
     @IBOutlet weak var userImage: UIImageView!
@@ -40,6 +42,12 @@ class UsersCollectionViewCell: UICollectionViewCell {
         userName.font = .avatar
         userName.textColor = .black
         userName.text = user.username
+        let alphaAnimation = CABasicAnimation(keyPath: "opacity")
+        alphaAnimation.fromValue = 0.0
+        alphaAnimation.toValue = 1.0
+        alphaAnimation.duration = 1.0
+        alphaAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        
         DispatchQueue.global(qos:.userInitiated).async { [weak self] in
                 let avatarTemplate = user.avatarTemplate
                 let sized = avatarTemplate.replacingOccurrences(of: "{size}", with: "80")
@@ -49,11 +57,10 @@ class UsersCollectionViewCell: UICollectionViewCell {
                 let image = UIImage(data: data)
                 DispatchQueue.main.async {
                     self?.userImage.image = image
-        
+                    self?.userImage.layer.opacity = 1
+                    self?.userImage.layer.add(alphaAnimation, forKey: "fade")
                 }
             }
-
- 
 }
 }
 

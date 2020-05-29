@@ -27,9 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navUsersVC = UINavigationController.init(rootViewController: usersVC)
         
         
-        topicsVC.tabBarItem  = UITabBarItem.init(title: "Topics", image: UIImage.init(named: "inicio"), tag: 0)
-        categoriesVC.tabBarItem   = UITabBarItem.init(title: "Categories", image: UIImage.init(systemName: "tag.fill"), tag: 1)
-        usersVC.tabBarItem   = UITabBarItem.init(title: "Users", image: UIImage.init(named: "usuarios"), tag: 2)
+        topicsVC.tabBarItem  = UITabBarItem.init(title: "Topics", image: UIImage.init(named: "inicioUnselected"), selectedImage: UIImage.init(named: "inicio"))
+        categoriesVC.tabBarItem   = UITabBarItem.init(title: "Categories", image: UIImage.init(systemName: "tag.fill"), tag: 0)
+        usersVC.tabBarItem   = UITabBarItem.init(title: "Users", image: UIImage.init(named: "usuariosUnselected"), selectedImage: UIImage.init(named: "usuarios"))
         
         
         let tabBarController = UITabBarController()
