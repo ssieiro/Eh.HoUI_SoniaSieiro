@@ -24,6 +24,8 @@
 		F769D8992428CAB8001FCACF /* TopicsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D8982428CAB8001FCACF /* TopicsDetailViewController.swift */; };
 		F769D89B2428CAC3001FCACF /* TopicsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F769D89A2428CAC3001FCACF /* TopicsDetailViewController.xib */; };
 		F769D89D2428DC76001FCACF /* SingleTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D89C2428DC76001FCACF /* SingleTopic.swift */; };
+		F76F36662481512700CE5778 /* TopicsTableViewWelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F36652481512700CE5778 /* TopicsTableViewWelcomeCell.swift */; };
+		F76F36692481552500CE5778 /* TopicsTableViewWelcomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76F36672481513700CE5778 /* TopicsTableViewWelcomeCell.xib */; };
 		F7752D252476E44100C69F6B /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7752D242476E44100C69F6B /* UIColor+Additions.swift */; };
 		F7752D272476E49000C69F6B /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7752D262476E49000C69F6B /* UIFont+Additions.swift */; };
 		F7752D2B2476E70B00C69F6B /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7752D2A2476E70B00C69F6B /* UsersCollectionViewCell.swift */; };
@@ -57,6 +59,8 @@
 		F769D8982428CAB8001FCACF /* TopicsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsDetailViewController.swift; sourceTree = "<group>"; };
 		F769D89A2428CAC3001FCACF /* TopicsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicsDetailViewController.xib; sourceTree = "<group>"; };
 		F769D89C2428DC76001FCACF /* SingleTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTopic.swift; sourceTree = "<group>"; };
+		F76F36652481512700CE5778 /* TopicsTableViewWelcomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTableViewWelcomeCell.swift; sourceTree = "<group>"; };
+		F76F36672481513700CE5778 /* TopicsTableViewWelcomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicsTableViewWelcomeCell.xib; sourceTree = "<group>"; };
 		F7752D242476E44100C69F6B /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		F7752D262476E49000C69F6B /* UIFont+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
 		F7752D2A2476E70B00C69F6B /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 			children = (
 				F7264478247AEA18008FA6B1 /* TopicsTableViewCell.swift */,
 				F726447A247AEA36008FA6B1 /* TopicsTableViewCell.xib */,
+				F76F36652481512700CE5778 /* TopicsTableViewWelcomeCell.swift */,
+				F76F36672481513700CE5778 /* TopicsTableViewWelcomeCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 				F710B7902420EC37009C7548 /* LaunchScreen.storyboard in Resources */,
 				F7752D2D2476E71300C69F6B /* UsersCollectionViewCell.xib in Resources */,
 				F7FBFD4224210CD7007B8E4F /* UsersViewController.xib in Resources */,
+				F76F36692481552500CE5778 /* TopicsTableViewWelcomeCell.xib in Resources */,
 				F7FBFD4424210D24007B8E4F /* CategoriesViewController.xib in Resources */,
 				F769D89B2428CAC3001FCACF /* TopicsDetailViewController.xib in Resources */,
 				F77B90B0242E26A100B6B671 /* NewTopicViewController.xib in Resources */,
@@ -292,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7CEBF0324238FBB00377826 /* Topics.swift in Sources */,
+				F76F36662481512700CE5778 /* TopicsTableViewWelcomeCell.swift in Sources */,
 				F7752D2B2476E70B00C69F6B /* UsersCollectionViewCell.swift in Sources */,
 				F7752D272476E49000C69F6B /* UIFont+Additions.swift in Sources */,
 				F77B90AE242E269000B6B671 /* NewTopicViewController.swift in Sources */,

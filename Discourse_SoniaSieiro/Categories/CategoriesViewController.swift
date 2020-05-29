@@ -53,7 +53,7 @@ extension CategoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = categories[indexPath.row].name
-        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.textColor = .black
 //        cell.contentView.backgroundColor = UIColor.darkGray
         return cell
     }

@@ -26,6 +26,7 @@ class TopicsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         self.topic = nil
+        avatar.image = nil
     }
     
     func setTopic(topic: Topic, users: [User]) {

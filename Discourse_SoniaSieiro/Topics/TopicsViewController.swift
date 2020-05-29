@@ -44,6 +44,10 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         
         let nib = UINib.init(nibName: "TopicsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TopicsTableViewCell")
+        
+        let nib2 = UINib.init(nibName: "TopicsTableViewWelcomeCell", bundle: nil)
+        tableView.register(nib2, forCellReuseIdentifier: "TopicsTableViewWelcomeCell")
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -110,12 +114,20 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TopicsTableViewCell", for: indexPath) as? TopicsTableViewCell {
-            let topic = latestTopics[indexPath.row]
-            cell.setTopic(topic: topic, users: users)
-            return cell
+        if indexPath.row == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "TopicsTableViewWelcomeCell", for: indexPath) as? TopicsTableViewWelcomeCell {
+                cell.setWelcomeCell()
+                return cell
+            }
+            fatalError("Could not create the Welcome Cell")
+        } else {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "TopicsTableViewCell", for: indexPath) as? TopicsTableViewCell {
+                let topic = latestTopics[indexPath.row]
+                cell.setTopic(topic: topic, users: users)
+                return cell
+            }
+            fatalError("Could not create the Topic Cell")
         }
-        fatalError("Could not create the Topic Cell")
     }
     
     
@@ -126,7 +138,9 @@ extension TopicsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 96
+        if indexPath.row == 0 {
+            return 151
+        } else { return 96 }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
