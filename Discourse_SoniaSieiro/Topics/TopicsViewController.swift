@@ -28,11 +28,16 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
     @IBOutlet weak var newTopicButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshControlPulled), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
     }
     
@@ -50,6 +55,7 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.refreshControl = refreshControl
         
         apiProvider.getLatestTopics { [weak self] (result) in
             switch result {
@@ -65,6 +71,13 @@ class TopicsViewController: UIViewController, TopicViewControllerDelegate {
             }
         }
         tableView.reloadData()
+    }
+    
+    @objc func refreshControlPulled() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.refreshControl.endRefreshing()
+            self?.reloadTable()
+        }
     }
 
     
